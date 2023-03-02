@@ -16,19 +16,20 @@ public class CopyFileTest {
 
 	public static void main(String[] args) throws IOException {
 			
-		InputStream fis = new FileInputStream("lorem.txt");
+		InputStream fis = System.in; //new FileInputStream("lorem.txt");
 		Reader isr = new InputStreamReader(fis);
 		BufferedReader br = new BufferedReader(isr);
 		
-		OutputStream fos = new FileOutputStream("lorem2.txt");
+		OutputStream fos = System.out;//new FileOutputStream("lorem2.txt");
 		Writer osw = new OutputStreamWriter(fos);
 		BufferedWriter bw = new BufferedWriter(osw);
 		
 		String line = br.readLine();
 		
-		while(line != null){
+		while(line != null && !line.isEmpty()){
 			bw.write(line);
 			bw.newLine();
+			bw.flush();
 			line = br.readLine();
 		}
 		
