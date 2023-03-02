@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.io.Writer;
 
 public class FileWriterTest3 {
@@ -21,7 +22,9 @@ public class FileWriterTest3 {
 		//FileWriter fw = new FileWriter("lorem2.txt");
 		//BufferedWriter bw = new BufferedWriter(new FileWriter("lorem2.txt"));
 		
-		PrintStream ps = new PrintStream("lorem2.txt");
+		//PrintStream ps = new PrintStream("lorem2.txt");
+		
+		PrintWriter ps = new PrintWriter("lorem2.txt");
 		
 		ps.println("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod");
 		ps.println();
